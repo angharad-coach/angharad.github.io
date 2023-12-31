@@ -1,0 +1,11 @@
+title: Niseko Area Mountain Bike Association
+description: ""
+baseurl: ""
+url: https://angharad.coach
+github_username:  tmortiboy
+
+strict_front_matter: true
+
+liquid:
+  error_mode: strict
+
