@@ -1,0 +1,52 @@
+---
+layout: default
+---
+<div class="et_pb_section et_pb_section_0 et_section_regular" >
+	<div class="et_pb_row et_pb_row_0">
+		<div class="et_pb_column et_pb_column_4_4 et_pb_column_0  et_pb_css_mix_blend_mode_passthrough et-last-child">
+			<div class="et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_left et_pb_bg_layout_light">
+				<div class="et_pb_text_inner">
+					<h1>Niseko Wellness Workshops</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="et_pb_section et_pb_section_1 et_section_regular" >
+	{% for workshop in site.data.workshops %}
+	<div class="et_pb_row et_pb_row_1 et_pb_gutters1">
+		<div class="et_pb_column et_pb_column_1_2 et_pb_column_1  et_pb_css_mix_blend_mode_passthrough" style="background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)),url('{{- workshop.image -}}');">
+			<div class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left et_pb_bg_layout_light">
+				<div class="et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_bg_layout_dark">
+					<div class="et_pb_text_inner">
+						<h3>{{ workshop.name }}</h3>
+					</div>
+				</div>
+				<div class="et_pb_text_inner">
+					{% for date in workshop.dates %}
+					<h6>{{ date.date }} {{ date.time }}</h6>
+					<h6><a target="_blank" href="{{ date.locationUrl }}">{{ date.location }}</a></h6>
+					{% endfor %}
+					<h7 style="color:#bbb;">{{ workshop.price }}</h7>
+				</div>
+			</div>
+			<div class="et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_right et_pb_module ">
+				<a class="et_pb_button et_pb_button_0 et_pb_bg_layout_light" target="_blank" href="{{ workshop.link }}" data-icon="&#x24;">Sign up</a>
+			</div>
+		</div>
+		<div class="et_pb_column et_pb_column_1_2 et_pb_column_2  et_pb_css_mix_blend_mode_passthrough et-last-child" style="height:331px; color:#fff; padding-left: 30px; padding-right: 30px; background-image:linear-gradient(180deg,rgba(22,22,22,0.8) 0%,#161616 100%);">
+			<div class="et_pb_module et_pb_image et_pb_image_0">
+				<span class="et_pb_image_wrap has-box-shadow-overlay">
+					<div class="box-shadow-overlay"></div>
+				</span>
+			</div>
+			<div class="et_pb_module et_pb_text et_pb_text_3  et_pb_text_align_left et_pb_bg_layout_light" style="margin-top:0 !important;">
+				<div class="et_pb_text_inner">
+					{{ workshop.description }}
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
